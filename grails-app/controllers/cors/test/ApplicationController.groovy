@@ -1,14 +1,9 @@
 package cors.test
 
-import grails.core.GrailsApplication
-import grails.plugins.*
-
-class ApplicationController implements PluginManagerAware {
-
-    GrailsApplication grailsApplication
-    GrailsPluginManager pluginManager
+class ApplicationController {
+    static responseFormats = ['json']
 
     def index() {
-        [grailsApplication: grailsApplication, pluginManager: pluginManager]
+        render '{"message": "Hello, World!"}'
     }
 }
